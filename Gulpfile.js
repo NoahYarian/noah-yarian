@@ -97,16 +97,14 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('copy', function () {
-  gulp.src('src/CNAME')
-    .pipe(gulp.dest('public'));
-  gulp.src('src/images/**/*')
+  // gulp.src('src/CNAME')
+  //   .pipe(gulp.dest('public'));
+  gulp.src(['src/images/**/*', '!src/images/**/*.psd'])
     .pipe(gulp.dest('public/images'));
-  gulp.src('src/sounds/**/*')
-    .pipe(gulp.dest('public/sounds'));
 });
 
 gulp.task('open', function () {
-  $.open('http://localhost:3000/');
+  $.open('http://www.noahyarian.com/');
 });
 
 //gulp.task('build:prod', ['jade:prod', 'sass:prod', 'js:prod', 'bower', 'copy']);
@@ -117,6 +115,7 @@ gulp.task('serve', ['build:dev'], function () {
   gulp.watch(['src/*.jade'], ['jade:dev']).on('change', $.browserSync.reload);
   gulp.watch(['src/**/*.scss'], ['sass:dev']).on('change', $.browserSync.reload);
   gulp.watch(['src/**/*.js'], ['js:dev']).on('change', $.browserSync.reload);
+  gulp.watch(['src/images/*.*', '!src/images/**/*.psd'], ['copy']).on('change', $.browserSync.reload);
  // gulp.watch(['src/**/*', '!src/**/*.jade', '!src/**/*.scss', '!src/**/*.js'], ['build:dev']).on('change', $.browserSync.reload);
 });
 
