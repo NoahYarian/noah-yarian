@@ -1,0 +1,19 @@
+{
+  "name": "noah-yarian",
+  "version": "1.0.0",
+  "description": "Portfolio website for Noah Yarian",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoahYarian/noah-yarian.git"
+  },
+  "author": "Noah Yarian <Noah.Yarian@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NoahYarian/noah-yarian/issues"
+  },
+  "homepage": "https://github.com/NoahYarian/noah-yarian#readme"
+}
