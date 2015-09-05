@@ -4,7 +4,19 @@ var gulp = require('gulp'),
     });
 
 gulp.task('clean', function (cb) {
-  $.del('public', cb);
+  $.del('public')
+    .then(function (paths) {
+      console.log('Deleted files/folders:\n', paths.join('\n'));
+      cb();
+    })
+    .catch(function (err) {
+      if (err.message === "Cannot read property 'join' of undefined") {
+        console.log("Probably nothing to delete... let's keep going, shall we?");
+        cb();
+      } else {
+        console.log("del error: ", err);
+      }
+    });
 });
 
 gulp.task('bower', function () {
