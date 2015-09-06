@@ -21,13 +21,18 @@ gulp.task('clean', function (cb) {
 
 gulp.task('bower', function () {
   gulp
-    .src($.mainBowerFiles())
+    .src($.mainBowerFiles('**/*.js'))
     .pipe($.concat('build.js'))
     .pipe(gulp.dest('public/lib'));
-  // gulp
-  //   .src($.mainBowerFiles('**/*.css'))
-  //   .pipe($.concat('build.css'))
-  //   .pipe(gulp.dest('public/lib'));
+  gulp
+    .src(['bower_components/pure/pure.css',
+          'bower_components/pure/grids-responsive.css',
+          'bower_components/font-awesome/css/font-awesome.css',
+          'lib/pure-layout-marketing/css/layouts/marketing.css'])
+    // .src($.mainBowerFiles('**/*.css'))
+    .pipe($.concat('build.css'))
+    .pipe(gulp.dest('public/lib'));
+  // console.log($.mainBowerFiles('**/*.css').join('\n'));
 });
 
 gulp.task('jade:dev', function () {
@@ -101,6 +106,8 @@ gulp.task('copy', function () {
   //   .pipe(gulp.dest('public'));
   gulp.src(['src/images/**/*', '!src/images/**/*.psd'])
     .pipe(gulp.dest('public/images'));
+  gulp.src('bower_components/font-awesome/fonts/*')
+    .pipe(gulp.dest('public/fonts'));
 });
 
 gulp.task('open', function () {
