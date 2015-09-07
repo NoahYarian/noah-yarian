@@ -1,24 +1,29 @@
-h1 {
-	color: #f90;
-}
-
-.scene {
-  height: 600px;
-  position: relative;
-  box-sizing: border-box;
-}
-
-.scene-image {
-  top: 0;
-  left: 0;
-  position: absolute;
-  z-index: -1;
-  object-fit: cover;
-
-}
-
-.scene-banner {
+.landing-outer {
+  height: 100%;
   width: 100%;
+  display: table;
+  vertical-align: middle;
+}
+
+.landing-container {
   text-align: center;
-  background: white;
+  position: relative;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.landing-inner {
+  width: 80%;
+  background: $gray2;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  // border: 10px solid $gray1;
+  border: 1px solid transparent;
+}
+
+h1 {
+  color: $gray3;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9em;
 }
