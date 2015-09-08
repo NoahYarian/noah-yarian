@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -9,5 +10,7 @@ html, body {
 }
 
 body {
-  background: $gray1;
+  background: linear-gradient(to top, rgba(66,66,66,0.97),  rgba(66,66,66,0.97)),
+              url('../images/texture2.jpg');
+  // url('../images/Group-Hike-opt.jpg') 70% / cover no-repeat fixed #222222;
 }

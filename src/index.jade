@@ -2,6 +2,8 @@ doctype html
 html
   head
     meta(charset='utf-8')
+    // HELLO! This code isn't particularly exciting, but it gets the job done!
+    // I did take some inspiration from http://www.gulpjs.com. It's a cool site.
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name="description" content="A portfolio website for Noah Yarian.")
@@ -15,6 +17,24 @@ html
     .landing-outer
       .landing-container
         .landing-inner
-          h1 NOAH YARIAN
+          h1 NOAH
+          h1 YARIAN
+        .pointer
+          a(href="#about")
+            h4 has cool stuff to show you
+          a(href="#about")
+            i(class="fa fa-arrow-circle-down fa-2x")
+    .main-container
+      .about(id='about')
+        .about-photo
+          img(src="images/texture.jpg")
+        .about-text
+          h2 About Me
+          ul
+            li My name is Noah Yarian and I live in Nashville, TN.
+            li My hobbies include disc golf, ping pong, fire poi, and sitting quietly by myself.
+            li I have a background in systems and network administration, consulting, and training.
+            li I am currently finishing up a six-month program at the Nashville Software School.
+            li In my time at NSS I have been exposed to a number of technologies and software development practices.
     script(src="lib/build.js")
     script(src="main.js")
